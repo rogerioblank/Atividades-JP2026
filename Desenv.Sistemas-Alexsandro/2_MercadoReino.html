@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Mercado do Reino</title>
+  <script>
+
+    function validaDesconto() {
+        const ValorCompra = document.getElementById("ValorCompra").value;
+
+        if (ValorCompra > 100){
+            document.getElementById("resultado").innerHTML =
+            "Você ganhou desconto!";            
+        } else {
+            document.getElementById("resultado").innerHTML =
+            "Compra sem desconto.";
+        }
+
+    }
+
+  </script>
+</head>
+
+<body>
+  <input id="ValorCompra" type="number" placeholder="Informe Valor da Compra!"> 
+  <div id="resultado"> </div>
+  <br>
+  <button id="meuBotao" onclick="validaDesconto()"> Validar Desconto! </button>
+</body>
+
+</html>

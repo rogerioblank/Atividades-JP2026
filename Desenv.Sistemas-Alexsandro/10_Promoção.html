@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Promocao</title>
+    <script>
+
+        function validarDesconto() {
+            const vlrCompra = document.getElementById("ValorCompra").value;
+            const Desconto = 0;
+            const valorfinal = 0;
+
+            if (vlrCompra > 200) {
+                Desconto = vlrCompra * 0.20
+                valorfinal = vlrCompra - Desconto
+
+                document.getElementById("ValorOriginal").innerHTML = vlrCompra;
+
+                document.getElementById("DescontoAplicado").innerHTML = Desconto;
+
+                document.getElementById("ValorFinal").innerHTML = valorfinal;
+
+            }
+
+    </script>
+</head>
+
+<body>
+    <input id="ValorCompra" type="number" placeholder="Valor da Compra!">
+    <div id="ValorOriginal"> </div>
+    <br>
+    <div id="DescontoAplicado"> </div>
+    <br>
+    <div id="ValorFinal"> </div>
+    <br>
+    <button id="meuBotao" onclick="validarDesconto()"> Verificar Desconto! </button>
+</body>
+
+</html>

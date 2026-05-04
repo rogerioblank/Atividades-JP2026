@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Torneio do Reino</title>
+  <script>
+
+    function validarAcesso() {
+        const Idade = document.getElementById("idade").value;
+        const PossuiEspada = document.getElementById("possuiEspada").value;
+
+        if (Idade > 16 && PossuiEspada === "Sim"){
+            document.getElementById("resultado").innerHTML =
+            "Pode participar do torneio";            
+        } else {
+            document.getElementById("resultado").innerHTML =
+            "Não pode participar";
+        }
+
+    }
+
+  </script>
+</head>
+
+<body>
+  <input id="idade" type="number" placeholder="Informe sua Idade!">
+  <input id="possuiEspada" type="text" placeholder="Possui espada? (sim ou nao)">
+  <div id="resultado"> </div>
+  <br>
+  <button id="meuBotao" onclick="validarAcesso()"> Validar Inscrição! </button>
+</body>
+
+</html>

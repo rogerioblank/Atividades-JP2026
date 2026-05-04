@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Senha Do Dragão</title>
+  <script>
+
+    function Senha() {
+        const SenhaDragao = document.getElementById("SenhaDragao").value;
+
+        if (SenhaDragao === "fogo"){
+            document.getElementById("resultado").innerHTML =
+            "Ponte Liberada!";            
+        } else {
+            document.getElementById("resultado").innerHTML =
+            "Ponte Bloqueada!";
+        }
+
+    }
+
+  </script>
+</head>
+
+<body>
+  <input id="SenhaDragao" type="password" placeholder="Informe a Palavra Secreta!"> 
+  <div id="resultado"> </div>
+  <br>
+  <button id="meuBotao" onclick="Senha()"> Confirmar! </button>
+</body>
+
+</html>

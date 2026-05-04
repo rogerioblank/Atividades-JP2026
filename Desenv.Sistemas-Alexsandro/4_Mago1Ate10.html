@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lancar Feitico</title>
+    <script>
+
+        function Feitico() {
+
+            let contador = "";
+            for (let numero = 1; numero <= 10; numero++) {
+                contador = numero;
+                document.getElementById("resultado").innerHTML = contador;
+                console.log(contador);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="resultado"> </div>
+    <br>
+    <button id="meuBotao" onclick="Feitico()"> Lancar Feitico </button>
+</body>
+
+</html>

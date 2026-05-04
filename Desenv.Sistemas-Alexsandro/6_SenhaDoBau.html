@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Senha Do Dragão</title>
+    <script>
+
+        function Senha() {
+            const SenhaBau = document.getElementById("SenhaBau").value;
+
+            while (SenhaBau !== "ouro") {
+                document.getElementById("resultado").innerHTML = "Senha Incorreta";
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <input id="SenhaBau" type="password" placeholder="Informe a Palavra Secreta!">
+    <div id="resultado"> </div>
+    <br>
+    <button id="meuBotao" onclick="Senha()"> Validar Senha! </button>
+</body>
+
+</html>

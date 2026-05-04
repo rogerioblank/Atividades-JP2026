@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Senha do Cofre</title>
+    <script>
+
+        function validarSenha() {
+            const senha = document.getElementById("Senha").value;
+
+            if (senha == 1234) {
+                document.getElementById("resultado").innerHTML =
+                    "Cofre aberto";
+            } else if (senha === "") {
+                document.getElementById("resultado").innerHTML =
+                    "Digite uma senha";
+            } else {
+                document.getElementById("resultado").innerHTML =
+                    "Errrrrou!";
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <input id="Senha" type="password" placeholder="Informe a senha do Cofre!">
+    <div id="resultado"> </div>
+    <br>
+    <button id="meuBotao" onclick="validarSenha()"> Abrir Cofre! </button>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Ponte Magica</title>
+  <script>
+
+    function validarAcesso() {
+        const Idade = document.getElementById("idade").value;
+        const Acompanhado = document.getElementById("acompanhado").value;
+
+        if (Idade >= 16 && Idade <= 17 && Acompanhado === "sim"){
+            document.getElementById("resultado").innerHTML =
+            "Acesso Liberado com acompanhante!";            
+        } else if (Idade >= 18) {
+            document.getElementById("resultado").innerHTML =
+            "Acesso Liberado!";
+        } else {
+            document.getElementById("resultado").innerHTML =
+            "Acesso Negado!";
+        }
+    }
+
+  </script>
+</head>
+
+<body>
+  <input id="idade" type="number" placeholder="Informe sua Idade!">
+  <input id="acompanhado" type="text" placeholder="Esta Acompanhado? sim ou nao">
+  <div id="resultado"> </div>
+  <br>
+  <button id="meuBotao" onclick="validarAcesso()"> Validar Acesso! </button>
+</body>
+
+</html>
