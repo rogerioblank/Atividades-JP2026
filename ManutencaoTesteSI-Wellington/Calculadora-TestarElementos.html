@@ -56,11 +56,11 @@
   <br>
   <br>
 
-  <h3>Testes</h3>
+  <button onclick="testarTodosOperadores()">Testar Operadores</button>
   <ul id="testes"></ul>
 
-  <button onclick="testarTodosOperadores()">Rodar testes</button>
-  <button onclick="testardiv()">Rodar testes Elemento</button>
+  <button onclick="testarDivs(['historico','display','botao','testes','resultado'])">Testar Elementos</button>
+  <div id="resultado"></div>
 
   <script>
     let valorAnterior = null;
@@ -143,13 +143,13 @@
 
       // Números
       if (!isNaN(e.key)) {
-        e.preventDefault();            // ⛔ impede duplicação
+        e.preventDefault();            //impede duplicação
         inserirNumero(e.key);
       }
 
       // Operadores
       if (operadores.includes(e.key)) {
-        e.preventDefault();            // ⛔ impede duplicação
+        e.preventDefault();            //impede duplicação
         inserirOperador(e.key);
       }
       //ponto
@@ -184,6 +184,7 @@
       }
 
       listaTestes.appendChild(li);
+      limpar();
     }
 
 
@@ -237,42 +238,18 @@
       });
     }
 
-    /*function testardiv (){
-      const form = document.getElementById("historico");
-      if (form) {
-        document.getElementById("historico").innerHTML = "Div de Hitorico existente";
-      } else {
-        document.getElementById("historico").innerHTML = "Div de Hitorico não foi criada!";
-      }
-    }*/
+    function testarDivs(ids) {
+      const resultado = document.getElementById("resultado");
+      resultado.innerHTML = "";
 
-    
-
-
-function testardiv(id) {
-  const elemento = document.getElementById(id);
-
-  if (elemento !== null) {
-    document.getElementById("historico").innerHTML = "Histórico existente";
-  } else {
-    document.getElementById("historico").innerHTML = "Histórico não existe!";
-  }
-}
-
-
-
-// Uso:
-testardiv([
-  "historico"
-]);
-
-
-function testarDOMCompleto() {
-  const elementos = document.getElementsByTagName("*");
-  console.log("Total de elementos no DOM:", elementos.length);
-}
-
-
+      ids.forEach(id => {
+        if (document.getElementById(id)) {
+          resultado.innerHTML += `${id}: existe <br>`;
+        } else {
+          resultado.innerHTML += `${id}: não existe <br>`;
+        }
+      });
+    }
 
   </script>
 
