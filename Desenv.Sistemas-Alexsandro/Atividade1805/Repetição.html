@@ -1,0 +1,49 @@
+<!--Repetição 
+- Tela de Login
+    - input user
+    - input pass
+    - Btn
+    - Div
+- Contar login mal sucedido
+- Bloquear apos 3 tentativas-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Repetição</title>
+    <script>
+        function validarAcesso() {
+            const usuarioAcesso = document.getElementById("usuario").value;
+            const senhaAcesso = document.getElementById("senha").value;;
+            let tentativa = 1
+
+            while (usuarioAcesso !== "rogerioblank@aluno.senac.br" || senhaAcesso !== "Tomate123") {
+                tentativa++;
+                if (tentativa > 3) {
+                    document.getElementById("resultado").innerHTML =
+                        `Acesso bloqueado! <br>
+                    Você digitou ${tentativa} vezes seu usuário ou senha errado!`;
+                    return;
+                }
+
+            }
+
+            alert("Acesso Liberado!");
+            document.getElementById("resultado").innerHTML = `Acesso Liberado! <br>
+                    Você acertou sua senha na ${tentativa}ª tentativa`;;
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <input id="usuario" type="text" placeholder="Login">
+    <input id="senha" type="password" placeholder="Senha">
+    <button onclick="validarAcesso()">Confirmar</button>
+    <div id="resultado"></div>
+
+</body>
+
+</html>

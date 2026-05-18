@@ -1,0 +1,46 @@
+<!--CONDICIONAL
+- Calcular Bonus de Salario de um funcionário
+    - input
+    - Btn
+    - Div
+
+- Salario fixo R$ 1.200,00
+- Acima de 5 tarefas Bonus R$ 100,00
+- Acima de 10 tarefas 30% do valor do Salario-->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Condicional </title>
+    <script>
+
+        function calcularBonus() {
+            let nrTarefas = document.getElementById("QtdeTarefas").value;
+            let valorSalario = 1200.00;
+            let bonus = 0
+
+            if (nrTarefas > 10) {
+                bonus = valorSalario * 0.30;
+            } else if (nrTarefas > 5) {
+                bonus = 100.00;
+            } else {
+                valorSalario
+            }
+
+            document.getElementById("Resultado").innerHTML =
+                `Salario Inicial: R$ ${valorSalario} <br>
+                Bonus: R$ ${bonus} <br>
+                Salario Total: R$ ${valorSalario + bonus} `;
+        }
+    </script>
+</head>
+
+<body>
+    <input id="QtdeTarefas" type="number" placeholder="Numero de Tarefas?">
+    <button id="ProcessarBonus" onclick="calcularBonus()"> Calcular Salario! </button>
+    <div id="Resultado"> </div>
+</body>
+
+</html>
